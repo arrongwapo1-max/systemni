@@ -34,3 +34,41 @@
     gap: 15px;
     display: flex;
 }
+
+
+/* ===============================
+     RESPONSIVE FIX — 768px BELOW
+================================= */
+@media (max-width: 768px) {
+
+    #abawt {
+        padding: 40px 10px;
+        margin-top: 200px;
+    }
+
+    .abawt img {
+        max-width: 260px;
+        display: none;
+    }
+
+    .paragraph {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .abawt h3 {
+        font-size: 16px;
+        margin-left: 100px;
+    }
+
+    .btn {
+        flex-wrap: wrap;
+        margin-left: 130px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

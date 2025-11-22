@@ -36,3 +36,11 @@
   .card-footer {
     padding: 14px 18px;
   }
+
+  @media (max-width: 768px) {
+    .card {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+    }
+  }

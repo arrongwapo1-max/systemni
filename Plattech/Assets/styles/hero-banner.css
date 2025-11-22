@@ -1,5 +1,4 @@
 
-
 #hero-banner {
     display: flex;
     padding: 72px 20px;
@@ -66,15 +65,81 @@
   
 }
 
+/* ------------ MOBILE FIXES --------------- */
+
 @media only screen and (max-width: 768px) {
-    .hero-img img {
-        height: 150px;
-        width:330px;
-        position: absolute  ;
+
+    #hero-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        min-height: auto;
+        gap: 20px;
     }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
     .hero-content h1 {
-        font-size: 20px;
+        font-size: 30px;
+        margin: 0px 20px 0px;
         position: absolute;
-        top:50%;
+        top: 30%;
+        left: 10%;
+    }
+    .crispy {
+        
+        margin: 0px 20px 0px;
+        position: absolute;
+        top: 100%;
+        left: 12%;
+
+    }
+    .maoni {
+        position: absolute;
+        top:42%;
+        left: 6%;
+        
+    }
+    .maona {
+        margin: 5px 100px 10px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+        margin: 15px  70px 15px;
+        margin-top: 300px;
+        
+      
+    }
+
+    .gwapoka {
+        justify-content: center;
+        margin: 20px 0 0 0;
+         position: absolute;
+        left: 22%;
+        top: 85%; 
+        
+    }
+
+    .hero-img {
+        margin: 0 ;
+        margin-top:10;
+        margin-left: 30px;
+        
+    }
+
+    .hero-img img {
+        height: 180px;
+        width: 90%;
+        max-width: 320px;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .back-img img {
+        height: 100%;
+        opacity: 0.3;
     }
 }

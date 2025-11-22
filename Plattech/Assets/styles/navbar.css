@@ -4,27 +4,39 @@ body {
   padding: 0;
 }
 
-
-.navbar {                                                                                         
+/* NAVBAR MAIN LAYOUT */
+.navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;                                                                                                      
   color: rgb(116, 49, 49);
-  padding: 5px 29px; 
-  font-size:20px;
-  font-weight: 30;  
-  height: 150px;
-  margin-left: 20px;
- 
-  
-
+  padding: 5px 40px;
+  height: 120px;
 }
 
+/* LEFT SIDE: LOGO + NAME */
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar img {
+  border-radius: 50%;
+  height: 90px;
+}
+
+.name {
+  font-size: 20px;
+  color: rgb(78, 41, 41);
+}
+
+/* CENTER NAVIGATION */
 .nav-links {
   display: flex;
-  gap: 30px;                                    
-  font-weight: 30;   
-  text-align: center;                                        
+  gap: 40px;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .nav-links li {
@@ -34,95 +46,90 @@ body {
 .nav-links a {
   text-decoration: none;
   color: rgb(78, 41, 41);
- 
+  font-size: 18px;
 }
+
 .nav-links a:hover {
-  text-decoration: underline rgb(218, 165, 32) ;
+  text-decoration: underline rgb(218, 165, 32);
 }
 
-.nav-links ul li {
-  margin: 0 10px;
-  padding: 0 10px;
+/* RIGHT SIDE BUTTONS */
+.maotka {
+  display: flex;
+  gap: 15px;
 }
 
-.nav-links ul li a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.094);
-  font-size: 10px;
-
-}
-.nav-links ul li a:hover {
-  color: rgb(3, 3, 3);
-
-}
-
+/* MOBILE TOGGLE */
 .menu-toggle {
   display: none;
 }
 
 .menu-btn {
   display: none;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
-.navbar img { 
-  border-radius: 50%;
-  height: 100px;
-  margin-left : -20px;
-}
-.name{
-  margin-right: 350px;
-}
-.maotka {
-  display: flex;
-  gap: 20px;                                    
-  font-size:15px; 
-  font-weight: 30;   
-  text-align: center;
-  margin-top:2px;
-  margin-left: 50px;
-  
+
+/* MOBILE BUTTONS INSIDE MENU */
+.mobile-buttons {
+  display: none;
 }
 
-
-
+/* ---------------------------- */
+/* MOBILE VIEW */
+/* ---------------------------- */
 @media only screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
 
-  }
-
+  /* BURGER MENU SHOW */
   .menu-btn {
-    display: flex;
+    display: block;
+    padding-left: 5px;
   }
 
+  /* COLLAPSE NAV LINKS */
   .nav-links {
     display: none;
     flex-direction: column;
     background: rgb(223, 221, 221);
     width: 100%;
-    height: 100%;
-    padding: 20px;
-    z-index: 2;
-  }  
+    position: absolute;
+    top: 170px; /* below navbar */
+    left: 0;
+    padding: 40px;
+    gap: 20px;
 
-  .menu-toggle:checked~.nav-links {
-    display: flex;
-    color: #ffff;
+    /* SCROLL FIX */
+    max-height: 70vh;    /* menu height */
+    overflow-y: auto;    /* allow scrolling */
+    z-index: 9999;
   }
- .navbar img {
-  margin-left: -40px;
+  /* SHOW WHEN TOGGLED */
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
 
-  margin-top: -7px;
- }
- .name {
-  margin-left: 30px;
-  font-size: 15px;
-  margin: 20px ;
- }
- .maotka {
-  display:flex;
-  gap:5px;
-  margin-left: 30px;
- }
-} 
+  /* LOGO SIZE */
+  .navbar img {
+    height: 70px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  /* HIDE DESKTOP BUTTONS */
+  .maotka {
+    display: none;
+  }
+
+  /* SHOW MOBILE BUTTONS INSIDE DROPDOWN */
+  .mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-buttons button {
+    width: 100%;
+  }
+}
